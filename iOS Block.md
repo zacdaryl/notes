@@ -12,7 +12,7 @@ block不熟悉，首先就是查看官方介绍了，[Working with Blocks](https
 - (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock;
 ```
 
-调用带block的方法：
+调用带block的方法   ：
 
 ```
 - (void)beginTaskWithCallbackBlock:(void (^)(void))callbackBlock {
