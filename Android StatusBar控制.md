@@ -70,5 +70,47 @@ actionBar.setCustomView(R.layout.your_custom_layout);
 </style>
 ```
 
+## 渐变色
+
+StatusBar背景设置为渐变色，总体思路是拿到statusbar对应的view，然后设置background即可。但是在onCreate里无法获取statusbar对象，需要延迟处理，以下为解决方案：
+
+```java
+//statusbar绘制完成，获取statusbar对象
+Looper.myQueue().addIdleHandler(new MessageQueue.IdleHandler() {
+    @Override
+    public boolean queueIdle() {
+        if (statusBarView == null) {
+            //获取statusbar对象
+            int identifier = getResources().getIdentifier("statusBarBackground", "id", "android");
+            statusBarView = getWindow().findViewById(identifier);
+
+            //decorview布局发生改变时，设置statusbar背景色
+            getWindow().getDecorView().addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+                @Override
+                public void onLayoutChange(View v, int left, int top, int right, int bottom, int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                    statusBarView.setBackgroundResource(R.drawable.your_bg_xml);
+                }
+            });
+        }
+        //保证只获取一次
+        return false;
+    }
+});
+```
+
+xml渐变色背景
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <gradient android:type="linear"
+        android:useLevel="true"
+        android:startColor="#ff41c0ff"
+        android:endColor="#ff2372dd"
+        android:angle="180" />
+</shape>
+```
+
 附上官方说的用Toolbar替换ActionBar的说明：[设置应用栏](https://developer.android.com/training/appbar/setting-up?hl=zh-cn)
 
