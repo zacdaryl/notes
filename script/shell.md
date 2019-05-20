@@ -24,3 +24,22 @@ if [ $? -ne 0 ]; then
     exit 1
 fi
 ```
+
+> 从release_vx.x.x分支，截取版本信息
+
+```
+git branch | grep release_v | cut -d _ -f 2
+```
+
+> 获取当前系统时间
+
+```
+time=$(date "+%Y-%m-%d-%H:%M:%S")
+```
+
+> 现有目录foo，目录中内容有 version, file1, file2等其他文件或目录，需要将除version外的其他文件或者目录移动到version中
+
+```
+cd foo
+ls | grep -v version | xargs -t -I '{}' mv {} version
+```
