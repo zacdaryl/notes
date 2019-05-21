@@ -34,3 +34,16 @@ version=`git branch | grep '*' | cut -d _ -f 2`
 git tag -f ${version}
 git push -f origin ${version}
 ```
+
+## 合并多次提交
+commit多次之后，如果发现每次commit都是一件事情，为了保证commit信息的清晰，可以将多次commit的信息进行合并，减少冗余信息
+
+```
+git rebase -i HEAD~n //n表示往前n个commit
+```
+
+然后会显示commit信息，且为倒序，即最近一次提交在最下边，此时将需要合并的都改为s，保存即可。如果有冲突，处理完冲突后，使用如下命令继续：
+
+```
+git rebase --continue
+```
