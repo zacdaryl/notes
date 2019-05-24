@@ -1,6 +1,6 @@
 # Git 操作脚本
 
-修改本地分支名称，并提交到远程，然后删除远程被修改的分支
+### 修改本地分支名称，并提交到远程，然后删除远程被修改的分支
 
 ```
 //修改分支名称
@@ -22,7 +22,7 @@ To git@github.com:schacon/simplegit.git
  - [deleted]         serverfix
 ```
 
-删除远程tag
+### 删除远程tag
 ```
  git push origin :refs/tags/tagname
 ``` 
@@ -35,7 +35,7 @@ git tag -f ${version}
 git push -f origin ${version}
 ```
 
-## 合并多次提交
+### 合并多次提交
 commit多次之后，如果发现每次commit都是一件事情，为了保证commit信息的清晰，可以将多次commit的信息进行合并，减少冗余信息
 
 ```
@@ -46,4 +46,11 @@ git rebase -i HEAD~n //n表示往前n个commit
 
 ```
 git rebase --continue
+```
+
+### 从tag创建分支
+
+```
+git branch new_branch_name vtag_name
+git checkout new branch_name
 ```
