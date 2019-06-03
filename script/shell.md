@@ -43,3 +43,18 @@ time=$(date "+%Y-%m-%d-%H:%M:%S")
 cd foo
 ls | grep -v version | xargs -t -I '{}' mv {} version
 ```
+
+> 判断当前分支是否以release_v开头
+
+```shell
+version=$(git branch | grep '*' | cut -d '*' -f 2 | tr -d ' ')
+echo current branch is: a${version}
+
+if [[ $version =~ ^release_v ]]; then
+    echo release prefix
+else 
+    echo not release prefix
+fi
+```
+
+去除首尾空格，使用‘tr -d’ 命令，此命令发现匹配正则的时候，if判断中正则表达式不能加双引号
