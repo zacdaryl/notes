@@ -9,13 +9,8 @@ git branch -m old new
 //新分支提交到远程仓库
 git push origin HEAD
 
-//删除远程仓库旧分支名
-git branch -d -r origin/old
-
 ```
-
 删除远程分支还有一个无厘头的语法 git push [远程名] :[分支名]
-
 ```
 $ git push origin :serverfix
 To git@github.com:schacon/simplegit.git
