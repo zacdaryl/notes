@@ -58,3 +58,29 @@ fi
 ```
 
 去除首尾空格，使用‘tr -d’ 命令，此命令发现匹配正则的时候，if判断中正则表达式不能加双引号
+
+### Node升级
+
+查看当前nvm版本
+
+```
+nvm list
+```
+
+查看远端nvm版本
+
+```
+nvm ls-remote
+```
+
+安装最新版node
+
+```
+nvm install new-version
+```
+
+设置默认版本
+
+```
+nvm alias default version
+```
