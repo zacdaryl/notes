@@ -49,3 +49,8 @@ git rebase --continue
 git branch new_branch_name vtag_name
 git checkout new branch_name
 ```
+
+### git-flow 最佳分支管理实践
+
+https://nvie.com/posts/a-successful-git-branching-model/
+

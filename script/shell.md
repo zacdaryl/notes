@@ -84,3 +84,25 @@ nvm install new-version
 ```
 nvm alias default version
 ```
+
+### CocoaPods升级
+
+官网说升级只需简单的使用如下命令即可：
+
+```
+[sudo] gem install cocoapods
+```
+
+但是即便给了权限，依然报错：
+
+```
+ERROR: While executing gem ... (Gem::FilePermissionError)
+
+You don't have write permissions for the /usr/bin directory.
+```
+
+于是找到如下方法：
+
+```
+sudo gem install cocoapods -n /usr/local/bin
+```
