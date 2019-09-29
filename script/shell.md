@@ -106,3 +106,9 @@ You don't have write permissions for the /usr/bin directory.
 ```
 sudo gem install cocoapods -n /usr/local/bin
 ```
+
+### tree列出目录结构
+
+很多技术文档中都列出了漂亮的树形目录，怎么做到的呢，答案是使用tree命令。
+
+`brew install tree` 安装，之后 `tree -a` 列出当前目录下所有文件，`tree -d` 只列出目录，`tree --help` 查看更多帮助。
