@@ -112,3 +112,15 @@ sudo gem install cocoapods -n /usr/local/bin
 很多技术文档中都列出了漂亮的树形目录，怎么做到的呢，答案是使用tree命令。
 
 `brew install tree` 安装，之后 `tree -a` 列出当前目录下所有文件，`tree -d` 只列出目录，`tree --help` 查看更多帮助。
+
+### 后台执行命令
+
+开启一个服务的时候，不想让此服务占据当前终端，而让其在后台运行，今天实验了如下几个方法：
+
+`command &` 可后台运行，但会打印内容到当前终端，可以 control + c 退出当前命令，继续shell操作，但是关闭终端，导致服务也会关闭
+
+`nohup commmand &` 后台运行，日志重定向到nohup.out，但关闭终端后，服务也随之终止
+
+`(command &)` 后台运行，关闭终端后，服务不会停止
+
+`ps -ef | grep 关键字`，`kill -p pid` 删除已经启动的后台服务
