@@ -124,3 +124,5 @@ sudo gem install cocoapods -n /usr/local/bin
 `(command &)` 后台运行，关闭终端后，服务不会停止
 
 `ps -ef | grep 关键字`，`kill -p pid` 删除已经启动的后台服务
+
+参考：[Linux 技巧：让进程在后台运行更可靠的几种方法](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html)
