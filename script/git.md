@@ -54,3 +54,16 @@ git checkout new branch_name
 
 https://nvie.com/posts/a-successful-git-branching-model/
 
+### 本地仓库关联github远程仓库
+
+[Adding an existing project to GitHub using the command line](https://help.github.com/en/articles/adding-an-existing-project-to-github-using-the-command-line)
+
+```
+$ git remote add origin https://github.com/user/repo.git
+# Set a new remote
+
+$ git remote -v
+# Verify new remote
+> origin  https://github.com/user/repo.git (fetch)
+> origin  https://github.com/user/repo.git (push)
+```
