@@ -14,3 +14,6 @@ SomeClass.someTypeMethod()
 ```
 
 https://docs.swift.org/swift-book/LanguageGuide/Methods.html
+
+## try-catch
+

@@ -9,6 +9,8 @@
  - [RxJava2使用记录](Android/RxJava2使用记录.md)
  - [数据库](Android/数据库.md)
  - [OkHttp](Android/OkHttp.md)
+ - [性能优化](Android/性能优化.md)
+ - [apk瘦身](Android/APK瘦身.md)
 
 * iOS
 

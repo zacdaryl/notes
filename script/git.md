@@ -67,3 +67,7 @@ $ git remote -v
 > origin  https://github.com/user/repo.git (fetch)
 > origin  https://github.com/user/repo.git (push)
 ```
+
+### 修改历史记录Author信息
+
+GitHub已经创建了一个脚本处理此事，试用后，效果不错，参考这篇文章[Changing author info](https://help.github.com/en/github/using-git/changing-author-info)

@@ -60,3 +60,28 @@ fun main() {
 reference: 
 
 https://www.kotlincn.net/docs/reference/delegated-properties.html
+
+## Backing Fields
+
+Fields cannot be declared directly in Kotlin classes. However, when a property needs a backing field, Kotlin provides it automatically. This backing field can be referenced in the accessors using the field identifier:
+
+
+```kotlin
+var counter = 0 // Note: the initializer assigns the backing field directly
+    set(value) {
+        if (value >= 0) field = value
+    }
+```
+The field identifier can only be used in the accessors of the property.
+
+A backing field will be generated for a property if it uses the default implementation of at least one of the accessors, or if a custom accessor references it through the field identifier.
+
+For example, in the following case there will be no backing field:
+```kotlin
+val isEmpty: Boolean
+    get() = this.size == 0
+```
+
+https://medium.com/@nomanr/backing-field-in-kotlin-explained-9f903f27946c
+
+https://kotlinlang.org/docs/reference/properties.html#properties-and-fields

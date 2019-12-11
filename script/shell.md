@@ -4,17 +4,17 @@
 
 [Shell语法文档](https://wiki.ubuntu.org.cn/Shell%E7%BC%96%E7%A8%8B%E5%9F%BA%E7%A1%80#if_.E8.AF.AD.E5.8F.A5)
 
-> shell脚本过长时，如何换行？
+### shell脚本过长时，如何换行？
 
 使用 " \ + Enter "反斜杠后边加回车
 
-> 正则表达式判断是否匹配
+### 正则表达式判断是否匹配
 
 ```
 =~
 ```
 
-> 判断之前脚本是否运行成功
+### 判断之前脚本是否运行成功
 
 $? 显示上一条命令的返回值，如果为0则表示执行成功
 
@@ -25,26 +25,26 @@ if [ $? -ne 0 ]; then
 fi
 ```
 
-> 从release_vx.x.x分支，截取版本信息
+### 从release_vx.x.x分支，截取版本信息
 
 ```
 git branch | grep release_v | cut -d _ -f 2
 ```
 
-> 获取当前系统时间
+### 获取当前系统时间
 
 ```
 time=$(date "+%Y-%m-%d-%H:%M:%S")
 ```
 
-> 现有目录foo，目录中内容有 version, file1, file2等其他文件或目录，需要将除version外的其他文件或者目录移动到version中
+### 现有目录foo，目录中内容有 version, file1, file2等其他文件或目录，需要将除version外的其他文件或者目录移动到version中
 
 ```
 cd foo
 ls | grep -v version | xargs -t -I '{}' mv {} version
 ```
 
-> 判断当前分支是否以release_v开头
+### 判断当前分支是否以release_v开头
 
 ```shell
 version=$(git branch | grep '*' | cut -d '*' -f 2 | tr -d ' ')
@@ -126,3 +126,7 @@ sudo gem install cocoapods -n /usr/local/bin
 `ps -ef | grep 关键字`，`kill -p pid` 删除已经启动的后台服务
 
 参考：[Linux 技巧：让进程在后台运行更可靠的几种方法](https://www.ibm.com/developerworks/cn/linux/l-cn-nohup/index.html)
+
+### 输出内容到剪贴板
+
+`pwd | pbcopy`
