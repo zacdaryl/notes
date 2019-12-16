@@ -85,3 +85,26 @@ val isEmpty: Boolean
 https://medium.com/@nomanr/backing-field-in-kotlin-explained-9f903f27946c
 
 https://kotlinlang.org/docs/reference/properties.html#properties-and-fields
+
+## if 表达式
+
+习惯了Java中的三元运算符：`() ? :`，Kotlin中并没有这个，取而代之的是if表达式。
+
+> In Kotlin, if is an expression, i.e. it returns a value. Therefore there is no ternary operator (condition ? then : else), because ordinary if works fine in this role.
+
+```
+// Traditional usage 
+var max = a 
+if (a < b) max = b
+
+// With else 
+var max: Int
+if (a > b) {
+    max = a
+} else {
+    max = b
+}
+ 
+// As expression 
+val max = if (a > b) a else b
+```
