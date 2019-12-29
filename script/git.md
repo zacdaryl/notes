@@ -71,3 +71,20 @@ $ git remote -v
 ### 修改历史记录Author信息
 
 GitHub已经创建了一个脚本处理此事，试用后，效果不错，参考这篇文章[Changing author info](https://help.github.com/en/github/using-git/changing-author-info)
+
+### 仅clone子目录
+
+只关心一个仓库个别目录的情况下，只想clone特定目录，而不想把整个仓库都clone下来，该怎么做？
+
+```
+mkdir <local-dir>
+cd <local-dir>
+git init
+git remote add origin <url>
+git config core.sparseCheckout true
+//指定clone的子目录
+echo "<sub-dir>" >> .git/info/sparse-checkout
+git pull --depth=1 origin master
+```
+
+参考：[How do I clone a subdirectory only of a Git repository?](https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository/28039894#28039894)
