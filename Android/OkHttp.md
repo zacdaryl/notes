@@ -79,3 +79,30 @@ internal fun enqueue(call: AsyncCall) {
 1. 请求过来是先加入readyAsyncCalls
 2. 从readyAsyncCalls队列中取出请求，放入runningAsyncCalls中执行
 3. 请求结束后，将其从runningAsyncCalls队列中移除
+
+## 拦截器
+
+需求要修改并转换http请求内容，做到业务层代码零侵入，这样的场景自然是使用okhttp的拦截器来实现。
+
+这里主要记录下从拦截器获取一个请求的所有参数，初看RequestBody对象，只能获取到contentType，contentLength，如何获取到具体的参数内容呢？content只是在create的时候传入，没有明确的get方法获取，在这个地方纠结了许久，writeTo方法倒是将内容写入BufferedSink对象中，直观感觉还是无法获取。Google后发现有人说查看okhttp的logging拦截器如何实现打印请求报文的，是个思路，于是查看HttpLoggingInterceptor源码，发现关键就是用writeTo来实现。
+
+```
+val buffer = Buffer()
+requestBody.writeTo(buffer)
+
+val contentType = requestBody.contentType()
+val charset: Charset = contentType?.charset(UTF_8) ?: UTF_8
+
+logger.log("")
+if (buffer.isProbablyUtf8()) {
+logger.log(buffer.readString(charset))
+logger.log("--> END ${request.method} (${requestBody.contentLength()}-byte body)")
+} else {
+logger.log(
+"--> END ${request.method} (binary ${requestBody.contentLength()}-byte body omitted)")
+}
+```
+通过源码，一目了然，它是使用writeTo把内容存入Buffer对象中，然后通过buffer的read方法，把内容又读出来打印。
+
+于是，拦截器中要获取请求体中的全部内容，就要借助RequestBody的writeTo方法，将内容存入Buffer，然后再从Buffer中获取内容。
+

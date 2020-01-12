@@ -108,3 +108,10 @@ if (a > b) {
 // As expression 
 val max = if (a > b) a else b
 ```
+
+## playground
+
+> Scratches let us create code drafts in the same IDE window as our project and run them on the fly. Scratches are not tied to projects; you can access and run all your scratches from any IntelliJ IDEA window on your OS.
+
+[scratches-and-worksheets](https://kotlinlang.org/docs/tutorials/quick-run.html#scratches-and-worksheets)
+

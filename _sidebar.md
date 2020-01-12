@@ -11,6 +11,8 @@
  - [OkHttp](Android/OkHttp.md)
  - [性能优化](Android/性能优化.md)
  - [apk瘦身](Android/APK瘦身.md)
+ - [依赖冲突](Android/dependency-conflict.md)
+ - [Debug类型](Android/debug-type.md)
 
 * iOS
 
