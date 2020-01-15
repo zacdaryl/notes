@@ -13,6 +13,7 @@
  - [apk瘦身](Android/APK瘦身.md)
  - [依赖冲突](Android/dependency-conflict.md)
  - [Debug类型](Android/debug-type.md)
+ - [加密解密](Android/Secure.md)
 
 * iOS
 
