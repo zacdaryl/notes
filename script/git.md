@@ -88,3 +88,13 @@ git pull --depth=1 origin master
 ```
 
 参考：[How do I clone a subdirectory only of a Git repository?](https://stackoverflow.com/questions/600079/how-do-i-clone-a-subdirectory-only-of-a-git-repository/28039894#28039894)
+
+### 分支间迁移文件
+
+功能A开发完成后，在分支B上需要同样的功能，但又不能将功能A的分支合并到B，此时就需要将对应文件移到分支B上。
+
+最初的想法是，切到A分支，把对应文件copy一份出来，再切到分支B，添加copy出来的文件。这种方法能解决问题，但感觉很low，强大的git应该提供有解决方案，于是Google之后，答案来了：
+
+```
+git checkout <branch-name> -- <file-path> //经测试直接filename是找不到的，需要加上对应路径
+```
