@@ -98,3 +98,16 @@ git pull --depth=1 origin master
 ```
 git checkout <branch-name> -- <file-path> //经测试直接filename是找不到的，需要加上对应路径
 ```
+
+### 找回已删除的commit信息
+
+当把分支删除后，或者reset到某个commit后，后悔了，想返回到已经删除的commit怎么办？
+
+使用 `git reflog` 显示本地git仓库更新记录，可找到对应的commit点，然后再恢复即可
+
+### 切换远程仓库
+
+代码已经push到远程仓库后，又接到一个通知，说把代码传到新的仓库，在本地切换远程代码仓库，然后再push即可。
+
+`git remote set-url origin <url>`
+`git push`
