@@ -115,3 +115,34 @@ val max = if (a > b) a else b
 
 [scratches-and-worksheets](https://kotlinlang.org/docs/tutorials/quick-run.html#scratches-and-worksheets)
 
+## Safe Calls
+
+对Kotlin的 [Null Safety](https://kotlinlang.org/docs/reference/null-safety.html) 一直存在一个误解，以为不管怎样写，只要编译通过了，就不会出现空指针异常。直到这个异常出现后，才又认真的看了一遍其中的 Safe Calls，发现自己并没有深入理解其空指针安全。
+
+举个例子：
+
+```kotlin
+var text = getText() //getText可返回null
+
+//刚开始这样写
+//if (text.contains("bc")) println("safe") //编译报错
+
+//编译器报错后，跟着提示一路fix后。
+if (text?.contains("bc")!!) println("safe") //错误的想法：因为kotlin是空指针安全的，text为空时就不会执行contains方法。
+```
+
+以上代码，执行时就会抛出异常：
+
+`Exception in thread "main" kotlin.KotlinNullPointerException`
+
+怎么回事？空指针安全，现在不安全了！
+
+其实编译器报错时，已经很明确给了提示，应该对text做非空判断，然后再继续使用，但错误的理解了编译器的提示修复功能，虽然解决了编译器的问题，但把异常带到了运行时。
+
+除了进行非空判断外，还可以继续使用Safe Calls来解决问题，就是和let结合起来使用，代码如下：
+
+```kotlin
+text?.let { //text不为空时，才会执行打印
+    print("safe");
+}
+```
