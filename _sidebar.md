@@ -14,6 +14,7 @@
  - [依赖冲突](Android/dependency-conflict.md)
  - [Debug类型](Android/debug-type.md)
  - [加密解密](Android/Secure.md)
+ - [作用域函数](Android/ScopeFun.md)
 
 * iOS
 
@@ -35,3 +36,10 @@
  - [git](script/git.md)
  - [python](script/python.md)
  - [shell](script/shell.md)
+
+* Other
+
+ - [App组件化探索](other/App组件化探索.md)
+ - [一个点](other/Dot.md)
+ - [快捷键](other/Iterm快捷键.md)
+ - [mock api](other/mockapi.md)
