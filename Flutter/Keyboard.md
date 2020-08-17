@@ -7,7 +7,7 @@
 
 > 如图，在使用TextField弹出数字键盘时，发现iOS端键盘没有完成按钮，这样在内容输入完成后，无法将键盘隐藏，十分不便。
 
-<img src="https://github.com/zacdaryl/notes/blob/master/assets/keyboard_number.jpeg" alt="keyboard_number" style="zoom:30%;" />
+<img src="https://raw.githubusercontent.com/zacdaryl/notes/master/assets/keyboard_number.jpeg" alt="keyboard_number" style="zoom:30%;" />
 
 ## 搜索
 
@@ -21,7 +21,7 @@
 
 继续Google，答案是肯定的。找到了这篇文章[Keyboard Done Button UX in Flutter iOS App](https://blog.usejournal.com/keyboard-done-button-ux-in-flutter-ios-app-3b29ad46bacc)，通读了一遍之后，感觉可行，于是就根据文章敲了一遍代码，实际结果确实ok，效果如下图：
 
-<img src="../assets/keyboard_number_done.jpeg" alt="keyboard_number_done" style="zoom:30%;" />
+<img src="https://raw.githubusercontent.com/zacdaryl/notes/master/assets/keyboard_number_done.jpeg" alt="keyboard_number_done" style="zoom:30%;" />
 
 ## 解决方案
 
