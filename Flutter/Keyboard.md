@@ -7,7 +7,7 @@
 
 > 如图，在使用TextField弹出数字键盘时，发现iOS端键盘没有完成按钮，这样在内容输入完成后，无法将键盘隐藏，十分不便。
 
-<img src="../assets/keyboard_number.jpeg" alt="keyboard_number" style="zoom:30%;" />
+<img src="https://github.com/zacdaryl/notes/blob/master/assets/keyboard_number.jpeg" alt="keyboard_number" style="zoom:30%;" />
 
 ## 搜索
 
