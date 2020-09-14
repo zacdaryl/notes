@@ -57,7 +57,7 @@ _entryPoint(SendPort sendPort) {
   //将自己的sendport发送给main isolate
   sendPort.send(receivePort.sendPort);
 
-  //receive message from new isolate
+  //receive message from main isolate
   receivePort.listen((dynamic message) async {
     if (message is int) {
       var timer = Stopwatch();
