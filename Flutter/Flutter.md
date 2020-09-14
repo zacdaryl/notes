@@ -21,3 +21,7 @@ Creates the mutable state for this widget at a given location in the tree.
 createState()的调用时机：
 
 > The framework can call this method multiple times over the lifetime of a StatefulWidget. For example, if the widget is inserted into the tree in multiple locations, the framework will create a separate State object for each location. Similarly, if the widget is removed from the tree and later inserted into the tree again, the framework will call createState again to create a fresh State object, simplifying the lifecycle of State objects.
+
+## RaisedButton
+
+如需将RaisedButton设置为不可点击状态，只需将onPressed属性设置为null即可。

@@ -2,7 +2,29 @@
 
 > 在Google I/O 2017中，Google宣布在Android上为Kotlin提供最佳支持。[Kotlin on Android. Now official](https://blog.jetbrains.com/kotlin/2017/05/kotlin-on-android-now-official/)
 
-Google官方支持Kotlin作为Android开发语言两年了，是时候使用Kotlin开发新的项目了。好记性不如烂笔头，新语言遇到的问题，应该记录下来备忘。
+这里记录下使用Kotlin过程中遇到的一些问题，或是和Java不一样的语法，加深下记忆。
+
+## Array
+习惯了Java的数组声明：`int[] nums = {1,2,3,4};`，在Kotlin中很容易也想以同样方式声明一个数组，结果是不行的，Kotlin中声明数组得使用arrayOf，`var nums = arrayOf(1,2,3,4)`。
+
+遍历数组的时候，在Java中，习惯使用`for(int i = 0; i < arrays.length; i++)`，在Kotlin中就不行了，得这么遍历：
+
+```kotlin
+for (item in collection) print(item)
+
+for (item: Int in ints) {
+    // ...
+}
+
+//遍历数组想使用索引
+for (i in array.indices) {
+    println(array[i])
+}
+
+for ((index, value) in array.withIndex()) {
+    println("the element at $index is $value")
+}
+```
 
 ## 静态方法 static
 
