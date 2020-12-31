@@ -44,3 +44,4 @@ activity.getWindow().setFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE, Win
 ```java
 activity.getWindow().clearFlags(WindowManager.LayoutParams.FLAG_NOT_TOUCHABLE);
 ```
+

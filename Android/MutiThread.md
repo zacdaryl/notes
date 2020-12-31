@@ -141,7 +141,7 @@ private static class MyThreadHandler extends Handler {
 
 > AsyncTask is designed to be a helper class around `Thread` and `Handler` and does not constitute a generic threading framework. AsyncTasks should ideally be used for short operations (a few seconds at the most.) If you need to keep threads running for long periods of time, it is highly recommended you use the various APIs provided by the `java.util.concurrent` package such as `Executor`, `ThreadPoolExecutor` and `FutureTask`.
 
-AsyncTask是一个Handler喝Thread的帮助类，简化了线程的创建和消息传递的处理，doInBackground回调中的代码在子线程中执行，onPostExecute中获取返回结果，在主线程中处理UI逻辑。
+AsyncTask是一个Handler和Thread的帮助类，简化了线程的创建和消息传递的处理，doInBackground回调中的代码在子线程中执行，onPostExecute中获取返回结果，在主线程中处理UI逻辑。
 
 官方不建议在AsyncTask中执行长时间的操作，最多几秒，API 30中已经将其标记为**deprecated**，不推荐使用。其潜在的问题，官方也给了比较详细的说明：
 
