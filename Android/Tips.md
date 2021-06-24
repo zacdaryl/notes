@@ -11,12 +11,22 @@
 查看堆栈
  adb shell dumpsys activity activities | sed -En -e '/Running activities/,/Run #0/p'
 
+## 刷机
 
+https://developers.google.com/android/ota
 
-作者：wodezhuanshu
-链接：https://www.jianshu.com/p/31d6b3d112ca
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+## 模拟器
 
+模拟器端口映射： https://developer.aliyun.com/article/270580
 
+telnet连接到模拟器
+`telnet localhost 5554`
 
+重定向端口，电脑端5000，模拟器9080
+`redir add tcp: 5000:9080`
+
+电脑端访问模拟器端口
+localhost:5000
+
+删除重定向
+`redir del`

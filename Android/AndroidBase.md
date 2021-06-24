@@ -102,15 +102,26 @@ Native端写的Module，在初始化的时候，通过WXModuleManager将自己�
 
 https://segmentfault.com/a/1190000013388649 这篇文章详细的介绍了weex框架的执行原理
 
-
-
-AMS
+## AMS
 
 https://wiki.jikexueyuan.com/project/deep-android-v2/activity.html
 
-
-
-Android动画
+## Android动画
 
 https://juejin.cn/post/6844903465211133959
 
+## 换肤
+
+https://juejin.cn/post/6844903647868878861
+
+[Android-skin-support](https://github.com/ximsfei/Android-skin-support)
+
+## 事件
+
+https://medium.com/@li.shuang.0425/5-steps-for-beginners-to-understand-event-dispatching-in-android-9b3b85024188
+
+![](../assets/event-dispatching.png)
+
+## mipmap vs drawable
+
+https://developer.aliyun.com/article/7416

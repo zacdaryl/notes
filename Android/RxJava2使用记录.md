@@ -46,3 +46,8 @@ database.userDao().getUser()
 [Room+RxJava](https://developer.android.com/training/data-storage/room/accessing-data.html#query-rxjava)
 
 总结：如果不使用onErrorResumeNext，则在发生错误时，subscribe中方法不会执行
+
+## Timer, Delay, and Interval Operators
+
+https://blog.mindorks.com/understanding-rxjava-timer-delay-and-interval-operators
+

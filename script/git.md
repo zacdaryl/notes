@@ -5,9 +5,11 @@
 ```
 //修改分支名称
 git branch -m old new
+git branch -m <newname>
 
 //新分支提交到远程仓库
 git push origin HEAD
+git push origin -u <newname>
 
 ```
 删除远程分支还有一个无厘头的语法 git push [远程名] :[分支名]

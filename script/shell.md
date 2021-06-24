@@ -130,3 +130,9 @@ sudo gem install cocoapods -n /usr/local/bin
 ### 输出内容到剪贴板
 
 `pwd | pbcopy`
+
+### curl
+
+> curl is used in command lines or scripts to transfer data. curl is also used in cars, television sets, routers, printers, audio equipment, mobile phones, tablets, settop boxes, media players and is the Internet transfer engine for thousands of software applications in over ten billion installations.
+
+[curl tutorial](https://curl.se/docs/manual.html)

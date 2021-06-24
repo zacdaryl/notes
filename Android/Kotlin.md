@@ -171,3 +171,7 @@ text?.let { //text不为空时，才会执行打印
 
 ## 协程
 
+## Functional interfaces
+
+https://kotlinlang.org/docs/fun-interfaces.html#sam-conversions
+
