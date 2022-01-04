@@ -113,3 +113,7 @@ git checkout <branch-name> -- <file-path> //经测试直接filename是找不到�
 
 `git remote set-url origin <url>`
 `git push`
+
+### 本地分支覆盖远程分支
+
+`git push origin <branch-name> --force`
