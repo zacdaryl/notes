@@ -19,6 +19,10 @@ To git@github.com:schacon/simplegit.git
  - [deleted]         serverfix
 ```
 
+#### 删除本地分支
+
+`git branch -d <branch-name>`
+
 ### 删除远程tag
 ```
  git push origin :refs/tags/tagname
@@ -33,7 +37,7 @@ git push -f origin ${version}
 ```
 
 ### 合并多次提交
-commit多次之后，如果发现每次commit都是同一件事情，为了保证commit信息的清晰，可以将多次commit的信息进行合并，减少冗余信息
+commit多次之后，如果发现每次commit都是同一件事情，为了保证commit信息的清晰，可以将多次commit的信息进行合并，减少冗余信息
 
 ```
 git rebase -i HEAD~n //n表示往前n个commit
